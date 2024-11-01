@@ -1,0 +1,222 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.headerText {
+    margin: 8vh 0;
+}
+
+.headerText h1 {
+    margin-top: 50px;
+    font-size: 60px;
+    color: white;
+}
+
+.dash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Change to auto to allow growth */
+    width: 85%;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding-bottom: 30px;
+}
+
+
+.idash {
+    width: 96%;
+    height: 420px; /* Ensuring all zones have the same height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.zone1.idash {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 10px;
+    width: 96%;
+    height: 420px;
+}
+
+.yearFilter {
+    width: 20%;
+    background-color: rgb(0, 76, 255); /* Matches box color */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center; /* Centers text in the filter */
+    margin-bottom: 50px;
+}
+
+.yearFilter h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+
+.itemzone {
+    width: 48%; /* Same width for all items */
+    height: 90%; /* Same height for all items */
+    background-color: rgb(0, 76, 255); /* Background color for boxes */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    font-size: 24px; /* Font size for text */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the boxes */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.itemzone:hover {
+    background-color: rgb(230, 0, 255); /* Darker shade on hover */
+}
+
+.zone2 {
+    margin-top: 10px;
+    width: 100%;
+    display: flex; /* Align items horizontally */
+    justify-content: center;
+
+    gap: 10px; /* Space between boxes */
+}
+
+
+#motion-effect .column td .data {
+    transition-duration: 0.6s;
+    transform: scale(0);
+  }
+  #motion-effect .column td:hover .data {
+    transform: scale(1);
+  }
+
+  /* Container for the chart */
+ /* Chart container for both charts */
+.charts-container {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Full width for the container */
+    margin-top: 20px; /* Space above the charts */
+}
+
+/* Zone for the bar chart */
+.zone3 {
+    flex: 1; /* Allow the bar chart zone to grow */
+    margin-right: 20px; /* Space between the bar chart and pie chart */
+    display: flex; /* Use flexbox for the inner items */
+    flex-direction: column; /* Align bars vertically */
+    align-items: center; /* Center items */
+}
+
+/* Chart container for bars */
+.chart-container {
+    display: flex; /* Use flex to align bars horizontally */
+    justify-content: space-between; /* Space out the bars evenly */
+    align-items: flex-end; /* Align bars to the bottom */
+    height: 300px; /* Set a fixed height for the chart */
+    margin: 20px 0; /* Margin around the chart */
+    border: 1px solid #ccc; /* Optional border around the chart */
+    background-color: #f9f9f9; /* Background color for the chart area */
+    padding: 10px; /* Padding around the chart */
+}
+
+/* Individual bar styles */
+.bar {
+    width: 60px; /* Set the width of the bars */
+    margin: 0 10px; /* Margin between bars */
+    background-color: #e600ff; /* Default bar color */
+    position: relative; /* Positioning for labels */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    border-radius: 5px; /* Rounded corners for bars */
+    max-height: 100%; /* Maximum height for the bars */
+}
+
+/* Bar label styles */
+.bar-label {
+    position: absolute; /* Position the label above the bar */
+    bottom: 100%; /* Position at the top of the bar */
+    left: 50%;
+    transform: translateX(-50%); /* Center the label horizontally */
+    font-size: 14px; /* Font size for labels */
+    color: #fff; /* Label text color */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better visibility */
+    padding: 3px 5px; /* Padding for the label */
+    border-radius: 3px; /* Rounded corners for labels */
+}
+
+
+
+
+.zone4 {
+    flex: 1; /* Allow the pie chart zone to grow */
+    display: flex;
+    justify-content: center; /* Center the pie chart */
+    align-items: center; /* Center the pie chart vertically */
+}
+
+
+/* Individual bar styles */
+
+
+
+/* Hover effect for bars */
+.bar:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Bar label styles */
+
+
+/* Column styles for each bar container */
+.column {
+    display: flex; /* Use flex to align items */
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 10px; /* Space below each column */
+}
+
+.charts-container {
+    display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่ง */
+    justify-content: space-between; /* จัดระยะห่างระหว่าง Bar Chart กับ Pie Chart */
+    align-items: flex-start; /* จัดแนวรายการด้านบน */
+    width: 100%; /* ความกว้างเต็ม */
+}
+
+.bar-chart-container, .pie-chart-container {
+    flex: 1; /* ให้ทั้งสองส่วนมีขนาดเท่า ๆ กัน */
+    text-align: center; /* จัดกลางให้กับ titles */
+}
+
+.pie-chart-container h2 {
+    margin-top: 10px; /* ระยะห่างจาก Pie Chart ไปยัง title */
+}
+
+.zone4 {
+    display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่ง */
+    flex-direction: column; /* จัดให้เป็นคอลัมน์ */
+    align-items: center; /* จัดกลางแนวนอน */
+    text-align: center; /* จัดกลางข้อความ */
+    margin-top: 20px; /* ระยะห่างด้านบน */
+}
+
+.zone4 h2 {
+    margin-top: 10px; /* ระยะห่างระหว่าง Pie Chart กับ title */
+    color: black; /* เปลี่ยนสีข้อความหากจำเป็น */
+}
+
+.table {
+    box-shadow: rgba(93, 0, 255, 0.56) 0px 22px 70px 4px;
+}

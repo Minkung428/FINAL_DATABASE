@@ -1,0 +1,102 @@
+/* Container styling */
+.container {
+    margin-top: 90px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    padding: 20px;
+    width: 90%; /* Increased width for more space */
+}
+
+/* Form box styling */
+.form_box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px; /* Increased max width */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 30px;
+    text-align: center;
+}
+
+.insert h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Field styling */
+.box_field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%; /* Makes each field take the full width */
+}
+
+.labelbar {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form_input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 8px;
+    transition: border-color 0.3s ease;
+}
+
+.form_input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Button styling */
+.button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .form_box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .insert h1 {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+<!-- HTML !-->
+<button class="button-85" role="button">Button 85</button>
+
+/* CSS */

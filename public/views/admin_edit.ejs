@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbaradmin.css">
+    <link rel="stylesheet" href="/css/navbarwithcolor.css">
+    <link rel="stylesheet" href="/css/admin_insert.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <% if (session.userId) { %>
+        <%- include('navbaradmin') %>
+            <% } else { %>
+                <%- include('navbar') %>
+                    <% } %>
+                        <div class="container">
+                            <div class="form_box">
+                                <div class="search">
+                                    <h1>EDIT SONG</h1>
+                                </div>
+                                <form id="searchForm" action="/admin/save/search" method="post">
+                                    <div class="mb-3">
+                                        <label for="artistName" class="form-label">Artist Name</label>
+                                        <input type="text" class="form-control" id="artistName"
+                                            placeholder="Enter artist name" name="artist_name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="songName" class="form-label">Song Name</label>
+                                        <input type="text" class="form-control" id="songName"
+                                            placeholder="Enter song name" name="song_name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="year" class="form-label">Year</label>
+                                        <input type="number" class="form-control" id="year" placeholder="Enter year"
+                                            name="year">
+                                    </div>
+                                    <button type="submit" id="saveButton" class="btn btn-primary">Search</button>
+                                </form>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Number</th>
+                                            <th scope="col">Artist Name</th>
+                                            <th scope="col">Song name</th>
+                                            <th scope="col">Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+                                   
+                  
+          
+                                    </tbody>
+                                </table>
+    
+                                  </div >
+                         </div >
+        </body >
+</html >

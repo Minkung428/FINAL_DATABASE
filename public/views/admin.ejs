@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbaradmin.css">
+    <link rel="stylesheet" href="css/navbarwithcolor.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <!-- In your main views (e.g., index.ejs, admin.ejs) -->
+    <% if (session.userId) { %>
+        <%- include('navbaradmin') %>
+    <% } else { %>
+        <%- include('navbar') %>
+    <% } %>
+
+    <div class="container">
+        <div class="headerText">
+            <!-- Optional header text -->
+        </div>
+        <div class="dash">
+            <div class="zone1 idash">
+                <a href="/admin/insert" class="itemzone1" style="text-decoration: none; color: inherit;">
+                    <h1>INSERT</h1>
+                </a>
+                <a href="/admin/search" class="itemzone2" style="text-decoration: none; color: inherit;">
+                    <h1>SEARCH</h1>
+                </a>
+            </div>
+            <div class="zone2 idash">
+                <a href="/admin/edit" class="itemzone3" style="text-decoration: none; color: inherit;">
+                    <h1>EDIT</h1>
+                </a>
+                <a href="/admin/delete" class="itemzone4" style="text-decoration: none; color: inherit;">
+                    <h1>DELETE</h1>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

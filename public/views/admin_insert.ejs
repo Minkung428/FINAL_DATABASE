@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbaradmin.css">
+    <link rel="stylesheet" href="/css/navbarwithcolor.css">
+    <link rel="stylesheet" href="/css/admin_insert.css">
+    
+</head>
+<body>
+    <% if (session.userId) { %>
+        <%- include('navbaradmin') %>
+    <% } else { %>
+        <%- include('navbar') %>
+    <% } %>
+    <div class="container">
+        <div class="form_box">
+            <div class="insert">
+                <h1>INSERT SONG</h1>
+            </div>
+            <form action="/admin/save/insert_song" method="post">
+                <div class="box_field">
+                    <label for="artist_name" class="labelbar">Artist Name</label>
+                    <input type="text" class="form_input" id="artist_name" name="artist_name" placeholder="Enter artist name" required>
+                </div>
+                <div class="box_field">
+                    <label for="track_id" class="labelbar">Track ID</label>
+                    <input type="text" class="form_input" id="track_id" name="track_id" placeholder="Enter track ID" required>
+                </div>
+                <div class="box_field">
+                    <label for="title" class="labelbar">Title</label>
+                    <input type="text" class="form_input" id="title" name="title" placeholder="Enter song title" required>
+                </div>
+                <div class="box_field">
+                    <label for="duration" class="labelbar">Duration</label>
+                    <input type="text" class="form_input" id="duration" name="duration" placeholder="Enter song duration (in seconds)" pattern="^\d+(\.\d+)?$" required>
+                </div>
+                
+                <div class="box_field">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="text" class="form_input" id="year" name="year" placeholder="Enter release year" required>
+                </div>
+                <div>
+                    <button type="submit" class="button">Save</button>
+                    <button type="button" class="button" onclick="clearForm()">Clear</button>
+                </div>
+            </form>
+            
+
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+    const duration = document.getElementById('duration').value;
+    const regex = /^\d+(\.\d+)?$/; // Regular expression for positive float
+
+    if (!regex.test(duration)) {
+        alert("Please enter a valid duration (positive float).");
+        return false; // Prevent form submission
+    }
+    
+    return true; // Allow form submission
+}
+
+        function clearForm() {
+            document.getElementById("artist_name").value = "";
+            document.getElementById("track_id").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("duration").value = "";
+            document.getElementById("year").value = "";
+        }
+        
+    </script>
+</body>
+</html>

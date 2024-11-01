@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/navbaradmin.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+   <!-- In your main views (e.g., index.ejs, admin.ejs) -->
+<% if (session.userId) { %>
+    <%- include('navbaradmin') %>
+<% } else { %>
+    <%- include('navbar') %>
+<% } %>
+
+
+<div class="introduction">
+    <div class="textbox">
+            <h1 class="fire">Database Final Project</h1>
+
+            <p>This is my Final Database Project that will show you many things about data visualization for instance Popular song 
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem et praesentium voluptates magnam corrupti, sunt dolor magni tenetur enim doloribus, 
+                sint nihil perferendis amet rem eum odit molestiae nisi explicabo!
+            </p>
+
+    </div>
+</div>
+    
+
+    
+    
+</body>
+</html>

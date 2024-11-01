@@ -1,0 +1,260 @@
+
+.container{
+    margin-top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    gap: 30px;
+}
+
+
+.header {
+    
+    text-align: center;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(93, 0, 255, 0.56) 0px 22px 70px 4px;
+}
+
+.header h1 {
+    padding: 25px;
+    font-size: 55px;
+    color: black;
+}
+
+/* CSS for buttons */
+.btn {
+    display: inline-block;
+    padding: 0.3em 0.8em; /* Smaller padding */
+    font-size: 0.9em; /* Smaller font size */
+    color: rgb(255, 255, 255);
+    background: #111;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+    z-index: 0;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(3px); /* Reduced blur for a smaller glow */
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 5px; /* Match the main button’s radius */
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Table styling */
+.table {
+    
+    box-shadow: rgba(93, 0, 255, 0.56) 0px 22px 70px 4px;
+}
+
+/* Collapse Filter Styling */
+#collapseExample {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px; /* Padding รอบกล่อง */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: #fff;
+    width: 100%; /* ขยายความกว้าง */
+    margin-top: 10px;
+}
+
+/* Sorting Header */
+.filters h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Radio Button Group Styling */
+.radio-group {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: space-between; /* Space between radio buttons */
+    gap: 10px; /* Space between radio buttons */
+    margin-top: 5px; /* Margin above */
+}
+
+/* Hover effect for labels */
+.radio-group label:hover {
+    color: #6e03e9;
+}
+
+/* Input radio styling */
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* Adjust margin for better alignment */
+    accent-color: #6e03e9; /* Color of the radio button */
+}
+
+/* Hover effect for button */
+.btn:hover {
+    background-color: #8a33e6;
+    box-shadow: 0px 4px 10px rgba(110, 3, 233, 0.3);
+}
+
+/* Animation for Opening the Collapse */
+
+
+
+.header{
+    text-align: center;
+    width: 100% ;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(93, 0, 255, 0.56) 0px 22px 70px 4px;
+
+}.header h1{
+    font-size: 55px;
+    color: black;
+}
+
+
+
+/* CSS */
+.btn {
+    display: inline-block;
+    padding: 0.3em 0.8em; /* Smaller padding */
+    font-size: 0.9em; /* Smaller font size */
+    color: rgb(255, 255, 255);
+    background: #111;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .btn:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(3px); /* Reduced blur for a smaller glow */
+    -webkit-filter: blur(3px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 5px; /* Match the main button’s radius */
+  }
+  
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+
+.table {
+    box-shadow: rgba(93, 0, 255, 0.56) 0px 22px 70px 4px;
+}
+
+/* Collapse Filter Styling */
+
+
+/* Sorting Header */
+.filters h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.radio-group {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: center; /* Center align the radio buttons */
+    gap: 20px; /* Space between radio buttons */
+}
+
+.radio-group {
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียงให้เป็นแถว */
+    gap: 20px; /* ระยะห่างระหว่างปุ่ม radio */
+    margin-top: 5px; /* ช่องว่างด้านบน */
+}
+
+.filters h6 {
+    margin-bottom: 5px; /* ช่องว่างด้านล่างของหัวข้อ */
+}
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* Adjust margin for better alignment */
+    accent-color: #6e03e9; /* Color of the radio button */
+}
+
+/* Hover effect for labels */
+.radio-group label:hover {
+    color: #6e03e9;
+}
+
+
+.btn:hover {
+    background-color: #8a33e6;
+    box-shadow: 0px 4px 10px rgba(110, 3, 233, 0.3);
+}
+
+
+
+
+

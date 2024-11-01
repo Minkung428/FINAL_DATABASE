@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oswald:wght@200..700&display=swap');
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'DynaPuff', sans-serif;
+  background-color: #121212;
+}
+
+.introduction {
+  width: 100%;    
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textbox {
+  width: 80%;
+  max-width: 600px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 40px;
+  backdrop-filter: blur(20px);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.textbox p {
+  font-size: 1.4em;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Fire Text Animation */
+.fire {
+  color: #f5f5f5;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+  text-shadow:
+    0px -1px 3px #ffffff, 
+    0px -2px 6px rgb(0, 21, 255), 
+    0px -6px 12px rgb(0, 255, 255), 
+    0px -10px 20px rgb(208, 0, 255);
+  animation: flicker 2s infinite;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0%, 100% { 
+    text-shadow: 
+      0 -1px 3px #ffffff, 
+      0 -2px 6px rgb(0, 38, 255), 
+      0 -6px 12px rgb(0, 179, 255), 
+      0 -10px 20px rgb(251, 8, 255);
+  }
+  50% { 
+    text-shadow: 
+      0 -2px 6px #fff, 
+      0 -4px 12px rgb(51, 61, 255), 
+      0 -8px 16px rgb(0, 179, 255), 
+      0 -12px 24px rgb(208, 0, 255);
+  }
+}
+
+/* Responsive Design */
+
+/* Mobile devices (up to 600px) */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .content, .textbox p {
+    font-size: 14px;
+  }
+
+  .fire {
+    font-size: 60px;
+  }
+}
+
+/* Tablets (601px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .content, .textbox p {
+    font-size: 16px;
+  }
+}
+
+/* Desktops (769px and up) */
+@media only screen and (min-width: 769px) {
+  .content, .textbox p {
+    font-size: 18px;
+  }
+}

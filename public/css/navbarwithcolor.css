@@ -1,0 +1,91 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(60, 0, 255, 0.8); /* Semi-transparent black */
+    z-index: 99;
+}
+
+    
+        
+
+    .btn {
+        width: 100%;
+        height: 45px;
+        background: #6e03e9;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    .logo {
+        font-size: 2em;
+        color: white;
+        user-select: none;
+    }
+
+    .owner {
+        text-decoration: none;
+    }
+
+    .navbar .underline {
+        position: relative;
+        font-size: 1.1em;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+
+    .navbar .underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: white;
+        border-radius: 5px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+
+    .navbar .underline:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    .navbar .btnLogin-popup {
+        width: 130px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid white;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: white;
+        margin-left: 40px;
+        font-weight: 500;
+    }
+
+    .navbar .btnLogin-popup:hover {
+        background: white;
+        color: black;
+    }
+
+    .content {
+        padding-top: 100px; /* Prevents content from being hidden behind the fixed header */
+        margin: 20px;
+    }

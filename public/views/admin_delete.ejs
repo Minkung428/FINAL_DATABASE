@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbaradmin.css">
+    <link rel="stylesheet" href="css/navbarwithcolor.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<body>
+    <% if (session.userId) { %>
+        <%- include('navbaradmin') %>
+    <% } else { %>
+        <%- include('navbar') %>
+    <% } %>
+    <div class="container">
+        
+        <div class="box_form">
+            <div class="title_form_insert">
+                <h1>INSERT SONG</h1>
+            </div>
+
+            <form action="/save/data/song" method="post">
+                <div class="mb-3">
+                    <label for="song_ID" class="form-label">Song_ID</label>
+                    <input type="text" class="form-control" id="song_id" placeholder="Enter song ID" name="song_id" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name_song" class="form-label">Song Name</label>
+                    <input type="text" class="form-control" id="name_song" placeholder="Enter song name" name="name_song" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="duration class="form-label">Duration</label>
+                    <input type="number" class="form-control" id="duration" placeholder="Enter song duration (second)" name="duration" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="song_hotness" class="form-label">Song HOT Rate</label>
+                    <input type="text" class="form-control" id="song_hotness" placeholder="Enter song hot rate range(0 - 1)" name="song_hotness" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="artist_id" class="form-label">Artist_ID</label>
+                    <input type="text" class="form-control" id="artist_id" placeholder="Enter artist ID" name="artist_id" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="artist_name" class="form-label">Artist Name</label>
+                    <input type="text" class="form-control" id="artist_name" placeholder="Enter artist name" name="artist_name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="artist_hotness" class="form-label">Artist HOT Rate</label>
+                    <input type="text" class="form-control" id="artist_hotness" placeholder="Enter artist hote rate range(0 - 1)" name="artist_hotness"  step="0.01" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" placeholder="Enter year" name="year" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <!-- Changed from type="button" to type="text" with readonly -->
+                    <input type="text" class="form-control" id="location" placeholder="Click to select location" name="location" required readonly onclick="openMapModal()" style="text-align: start;">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="number" step="any" class="form-control" id="latitude" placeholder="Enter latitude" name="latitude" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude</label>
+                    <input type="number" step="any" class="form-control" id="longitude" placeholder="Enter longitude" name="longitude" required>
+                </div>
+            
+                <div>
+                    <button type="submit" class="button-55">Delete</button>
+                    <input type="button" class="button-55" value="Back" onclick="window.history.back()">
+                </div>
+            </form>
+        </div>
+</body>
+</html>

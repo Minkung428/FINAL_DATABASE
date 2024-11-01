@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+  
+</head>
+<body>
+   <!-- In your main views (e.g., index.ejs, admin.ejs) -->
+
+    <div class="wrapper2">
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form id="registerForm" action="/register" method="post" novalidate>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" name="user_name" value="<%= (locals.old_data) ? old_data.user_name : '' %>" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" name="user_pass" required>    
+                    <label>Password</label>
+                </div>
+                
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p> Already have an account? <a href="/login" class="login-link">Login</a></p>
+                </div>  
+            </form>
+        </div>
+    </div>
+    
+    
+    
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const formData = new FormData(this);
+            const data = new URLSearchParams(formData);
+    
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    body: data
+                });
+    
+                const jsonResponse = await response.json();
+    
+                if (response.ok) {
+                    alert(jsonResponse.message); // Show success alert
+                    window.location.href = '/login'; // Redirect to login after successful registration
+                } else {
+                    alert(jsonResponse.message); // Show alert with error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</div>
+</body>
+</html>
