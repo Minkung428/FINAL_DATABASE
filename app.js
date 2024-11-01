@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -24,13 +25,14 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'ejs');
+app.use(cors())
 
 const port = 3000;
 
 // Create MySQL connection
 const connection = mysql.createConnection(process.env.DATABASE_URL);
 
-app.get('/popular_song', (req, res, next) => {
+app.get('/song', (req, res, next) => {
   connection.query(
     'SELECT track_id, artist_name, title, duration, year FROM combined_data_filtered WHERE year != 0 LIMIT 100',
     (err1, results1) => {
@@ -43,7 +45,7 @@ app.get('/popular_song', (req, res, next) => {
           if (err2) return next(err2); // Handle error
 
           // Render the results
-          res.render('popularsong', { session: req.session, songData: results1, yearData: results2 });
+          res.render('song', { session: req.session, songData: results1, yearData: results2 });
         }
       );
     }
@@ -51,7 +53,7 @@ app.get('/popular_song', (req, res, next) => {
 });
 
 // POST route to filter and sort songs based on user selections
-app.post('/popular_song', function(req, res, next) {
+app.post('/song', function(req, res, next) {
   let sortColumn = 'duration';
   let sortOrder = 'DESC';
 
@@ -103,7 +105,7 @@ app.post('/popular_song', function(req, res, next) {
         }
 
         // Render the results
-        res.render('popularsong', { session: req.session, songData: results1, yearData: results2 });
+        res.render('song', { session: req.session, songData: results1, yearData: results2 });
       }
     );
   });
