@@ -2,10 +2,8 @@ const express = require('express');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
-const { body, validationResult } = require('express-validator');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
-const { error } = require('console');
 
 dotenv.config();
 
@@ -457,8 +455,4 @@ app.get('/admin/delete/data',(req,res) =>{
 
 
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
-
+app.listen(process.env.PORT || 3000)
