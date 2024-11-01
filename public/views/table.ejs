@@ -14,7 +14,7 @@
             <div class="card card-body">
                 <div class="filters">
                     <h5>Sort Order</h5>
-                    <form id="sortForm" action="/popular_song" method="POST">
+                    <form id="sortForm" action="/song" method="POST">
                         <div>
                             <label><h6>Sort by Year:</h6></label>
                             <div class="radio-group">
@@ -32,7 +32,7 @@
                     </form>
         
                     <h5>Year</h5>
-                    <form id="yearFilterForm" action="/popular_song" method="POST">
+                    <form id="yearFilterForm" action="/song method="POST">
                         <select name="year" id="currentyear" class="btn_filter" onchange="this.form.submit()">
                             <option value="all" selected>All</option>
                             <% yearData.forEach(function(year) { %>
